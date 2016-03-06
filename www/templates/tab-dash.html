@@ -1,0 +1,20 @@
+<ion-view view-title="Dashboard" cache-view="true">
+    <ion-content >
+        <div class="list card card-esportudo" ng-repeat="article in arrayNews">
+            <div class="item item-avatar item-timeago">
+                <!-- header -->
+                <img ng-src="main/assets/images/categories/{{::vm.article.categoryUrl}}">
+                <h2>{{::article.category}}</h2>
+                <p class="assertive">{{::article.title}}</p>
+                <!-- <span class="timeago"> 30 mins</span> -->
+            </div>
+            <!-- image with or without overlay play -->
+            <!-- vaya al articulo -->
+            <!-- ng-click="vm.goArticle()" -->
+            <div class="item item-image fixed-height" my-background-image="{{::article.imageUrl}}">
+                <!-- <img ng-click="vm.goArticle()" ng-src="{{::article.imageUrl}}"> -->
+            </div>
+            <!-- footer -->
+        </div>
+    </ion-content>
+</ion-view>

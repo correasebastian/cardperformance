@@ -1,0 +1,27 @@
+<ion-view view-title="Account">
+    <ion-content>
+        <div class="list card card-esportudo" ng-repeat="article in arrayNews">
+            <div class="item item-avatar item-timeago">
+                <!-- header -->
+                <img ng-src="main/assets/images/categories/{{::vm.article.categoryUrl}}">
+                <!-- <h2>{{::article.category}}</h2> -->
+                <h2>{{::article.id}}</h2>
+                <!-- <p class="assertive">{{::article.title}}</p> -->
+                <p class="assertive">{{$index}}</p>
+                <!-- <span class="timeago"> 30 mins</span> -->
+            </div>
+            <!-- image with or without overlay play -->
+            <!-- vaya al articulo -->
+            <!-- ng-click="vm.goArticle()" -->
+            <div class="item item-image fixed-height" scm-img-complete img-url="{{::article.imageUrl}}" index={{$index}}>
+            </div>
+            <div class="item row assertive">
+                <i class="col icon ion-music-note"></i>
+                <i class="col icon ion-music-note"></i>
+                <i class="col icon ion-music-note"></i>
+                <i class="col icon ion-music-note"></i>
+            </div>
+            <!-- footer -->
+        </div>
+    </ion-content>
+</ion-view>
