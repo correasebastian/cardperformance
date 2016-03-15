@@ -1,0 +1,19 @@
+<ion-view view-title="Esportudo">
+    <ion-content scroll-event-interval="5" class="esportudo-content">
+        <div ng-if="vm.articles.length">
+            <div class="list card card-esportudo" ng-repeat="article in vm.articles | orderBy:'-id' track by article.id">
+                <div class="item item-avatar item-timeago">
+                    <img nf-if="article.categoryUrl" ng-src="main/assets/images/categories/{{::article.categoryUrl}}">
+                    <h2>{{::article.slug }}</h2>
+                    <!-- <p class="assertive" ng-class="{'all-title':!vm.article.article_image_url[0]}" ng-click="vm.goArticle()">{{::article.title.rendered}}</p> -->
+                    <p ng-bind-html="::article.title.rendered"></p>
+                </div>
+                <div ng-class="{'fixed-height':vm.minDiv}" class="item item-image" ng-if="article.article_image_url[0]">
+                    <img ng-src="{{::article.article_image_url[0]}}" ng-click="vm.goArticle()">
+                </div>
+                <!--  <share-esportudo title="{{::article.title.rendered}}" img-url="{{::article.article_image_url[0]}}" news-url="{{::article.article_url[0]}}">
+                </share-esportudo> -->
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
